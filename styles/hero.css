@@ -1,4 +1,8 @@
 section.hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
     max-width: 80rem;
     width: 100%;
     padding: 2.5rem 2rem;
@@ -78,6 +82,68 @@ section.hero{
         }
     }
 
+    /* PATINS */
+
+    & > div:nth-child(2){
+
+        display: block;
+        max-width: 30.5rem;
+        width: 100%;
+        height: 30.5rem;
+
+        & .content{
+
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+        }
+
+        & img{
+            position: absolute;
+            width: 100%;
+        }
+
+        & img[src*="Ellipse"]{
+            width: 94%;
+            top: 3%;
+            left: 3%;
+            transform: translateX(200%);
+
+            animation: slidein 3s 200ms ease forwards;
+        }
+
+        & img[src*="patins"]{
+            z-index: 1;
+            transform: translateX(200%);
+
+            animation: slidein 3s ease forwards;
+        }
+
+        & img[src*="Stars 1"]{
+            top: 30%;
+            z-index: 0;
+            max-width: 5.5rem;
+            opacity: 0;
+            transform: translateX(400%);
+
+            animation: slidein 2s 800ms ease both, appear 100ms 800ms both;
+            
+        }
+
+        & img[src*="Stars 2"]{
+            max-width: 2.5rem;
+            right: 0;
+            bottom: 35%;
+            transform: translateX(400%);
+
+            animation: slidein 2.2s 800ms ease both;
+        }
+
+    }
+    
+    
+
 
 
 }
@@ -106,7 +172,27 @@ section.hero{
 
 
 
+@keyframes slidein {
 
+    50%{
+        transform: translateX(-20px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
 
 
 
