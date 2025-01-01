@@ -1,0 +1,107 @@
+footer{
+    padding-inline: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+
+
+        img{
+            width: 2rem;
+            transition: transform 500ms ease;
+
+            &:hover{
+                transform: rotate(90deg);
+            }
+        }
+
+        h2{
+            font: 700 1.25rem/130% 'Syne', sans-serif;
+        }
+    }
+
+    .utility {
+        display: flex;
+        gap: 2rem;
+    
+        a {
+            position: relative;
+            text-decoration: none;
+    
+            &:hover {
+                .underline {
+                    transform: translateX(-50%) scaleX(1); /* Expande no hover */
+                }
+            }
+    
+            .underline {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%) scaleX(0); /* Começa encolhido */
+                transform-origin: center; /* Define o ponto de origem no centro */
+                background-color: #06B6D4;
+                height: 2px;
+                width: 100%;
+                transition: transform 500ms ease; /* Transição suave */
+            }
+    
+            p {
+                font: 500 1rem/150% 'Montserrat', sans-serif;
+            }
+        }
+    }
+
+
+    .social {
+        display: flex;
+        gap: 1rem;
+    
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            overflow: hidden; /* Garante que o pseudo-elemento fique dentro do círculo */
+            transition: transform 500ms ease;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #FFCD1E;
+                border-radius: 50%;
+                transform: scale(0); /* Começa pequeno */
+                transform-origin: center;
+                transition: transform 500ms ease; /* Animação suave */
+                z-index: 0; /* Fica atrás do conteúdo */
+            }
+    
+            &:hover::before {
+                transform: scale(1); /* Expande para preencher */
+            }
+    
+            img {
+                width: 1.5rem;
+                height: 1.5rem;
+                position: relative;
+                z-index: 1; /* Fica acima do pseudo-elemento */
+            }
+        }
+    }
+}
+
+
+
+
